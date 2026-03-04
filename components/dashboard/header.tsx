@@ -14,6 +14,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Settings, CreditCard, LogOut } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
+import { CommandBarTrigger } from '@/components/command-bar'
 import useSWR from 'swr'
 
 async function fetchUser() {
@@ -57,7 +58,9 @@ export function DashboardHeader() {
 
   return (
     <header className="flex h-16 items-center justify-between border-b border-border bg-card px-4 lg:px-6">
-      <div className="ml-12 lg:ml-0" />
+      <div className="ml-12 lg:ml-0">
+        <CommandBarTrigger />
+      </div>
 
       <div className="flex items-center gap-2">
         <ThemeToggle />

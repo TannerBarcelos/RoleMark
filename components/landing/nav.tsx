@@ -2,10 +2,10 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { CornerButton } from '@/components/ui/corner-button'
+import { Logo } from '@/components/logo'
 
 const navLinks = [
   { href: '#how-it-works', label: 'How It Works' },
@@ -20,14 +20,7 @@ export function LandingNav() {
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 lg:px-6">
         <Link href="/" className="flex items-center gap-2.5">
-          <Image 
-            src="/images/logo.jpg" 
-            alt="RoleMark" 
-            width={32} 
-            height={32} 
-            className="h-8 w-8"
-          />
-          <span className="text-lg font-semibold text-foreground tracking-tight">RoleMark</span>
+          <Logo size={32} showText />
         </Link>
 
         {/* Desktop nav */}

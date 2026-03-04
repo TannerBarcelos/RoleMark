@@ -30,17 +30,8 @@ export const metadata: Metadata = {
     'resume builder',
   ],
   icons: {
-    icon: [
-      {
-        url: '/favicon.jpg',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/favicon-dark.jpg',
-        media: '(prefers-color-scheme: dark)',
-      },
-    ],
-    apple: '/favicon.jpg',
+    icon: '/icon.svg',
+    apple: '/icon.svg',
   },
 }
 

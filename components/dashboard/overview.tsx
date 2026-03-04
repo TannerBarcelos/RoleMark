@@ -57,7 +57,14 @@ export function DashboardOverview({ resumes, recentScores, companies, access }: 
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-foreground lg:text-3xl text-balance">Dashboard</h1>
-          <p className="text-muted-foreground">Manage your resumes and applications</p>
+          <p className="text-muted-foreground">
+            Manage your resumes and applications
+            <span className="hidden sm:inline text-muted-foreground/60"> · Press </span>
+            <kbd className="hidden sm:inline-flex h-5 items-center gap-0.5 border border-border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground/80">
+              <span className="text-xs">⌘</span>K
+            </kbd>
+            <span className="hidden sm:inline text-muted-foreground/60"> to search</span>
+          </p>
         </div>
         <Button asChild size="lg" className="min-h-[44px]">
           <Link href="/dashboard/resumes/new">

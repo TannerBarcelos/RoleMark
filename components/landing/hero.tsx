@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Star } from 'lucide-react'
+import { ArrowRight, Star, CheckCircle2 } from 'lucide-react'
 import { CornerButton } from '@/components/ui/corner-button'
+import { featureFlags } from '@/lib/feature-flags'
 
 export function LandingHero() {
   return (
@@ -13,35 +14,37 @@ export function LandingHero() {
 
       <div className="mx-auto max-w-6xl px-4 lg:px-6 pt-24 pb-16 lg:pt-32 lg:pb-24">
         <div className="flex flex-col items-center text-center gap-6">
-          {/* Social proof pill */}
-          <div className="inline-flex items-center gap-2 border border-border bg-card/50 backdrop-blur-sm px-4 py-2 text-sm">
-            <div className="flex -space-x-1">
-              <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-              <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-              <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-              <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-              <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+          {/* Social proof pill - behind feature flag */}
+          {featureFlags.showTrustBadge && (
+            <div className="inline-flex items-center gap-2 border border-border bg-card/50 backdrop-blur-sm px-4 py-2 text-sm">
+              <div className="flex -space-x-1">
+                <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+              </div>
+              <span className="text-muted-foreground">Trusted by 10,000+ job seekers</span>
             </div>
-            <span className="text-muted-foreground">Trusted by 10,000+ job seekers</span>
-          </div>
+          )}
 
-          {/* Headline */}
+          {/* Headline - outcome focused */}
           <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance leading-[1.1]">
-            Every role deserves the{' '}
-            <span className="text-primary">right resume</span>
+            Land more interviews with{' '}
+            <span className="text-primary">tailored resumes</span>
           </h1>
 
-          {/* Sub-headline */}
+          {/* Sub-headline - specific benefit */}
           <p className="max-w-2xl text-lg text-muted-foreground lg:text-xl text-pretty leading-relaxed">
-            AI-powered resume scoring and tailoring. Upload your resume, paste a job description, 
-            and get instant insights to land more interviews.
+            Score your resume against any job description in seconds. Get actionable suggestions 
+            to beat applicant tracking systems and stand out to hiring managers.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-4 mt-2">
             <Link href="/auth/login">
               <CornerButton className="min-h-[52px] px-8 text-base gap-2">
-                Get Started Free
+                Score My Resume Free
                 <ArrowRight className="h-4 w-4" />
               </CornerButton>
             </Link>
@@ -52,9 +55,21 @@ export function LandingHero() {
             </a>
           </div>
 
-          <p className="text-sm text-muted-foreground">
-            No credit card required
-          </p>
+          {/* Trust signals - inline */}
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="h-4 w-4 text-primary" />
+              No credit card required
+            </span>
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="h-4 w-4 text-primary" />
+              Results in 30 seconds
+            </span>
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="h-4 w-4 text-primary" />
+              ATS-optimized suggestions
+            </span>
+          </div>
 
           {/* App Screenshot */}
           <div className="relative mt-12 w-full max-w-5xl">

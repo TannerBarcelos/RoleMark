@@ -71,10 +71,10 @@ export function LandingPricing() {
         <div className="text-center mb-16">
           <p className="text-sm font-medium text-primary mb-3">PRICING</p>
           <h2 className="text-3xl font-semibold text-foreground lg:text-4xl text-balance">
-            Simple, transparent pricing
+            Invest in your career
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            {"You'll apply to more than one job. Subscribe and tailor every application."}
+            One tailored resume can mean the difference between rejection and interview. Choose your path.
           </p>
         </div>
 

@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import {
@@ -14,10 +13,10 @@ import {
   ChevronLeft,
   Menu,
 } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { Logo, LogoMark } from '@/components/logo'
 
 const navItems = [
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
@@ -76,15 +75,10 @@ export function DashboardSidebar() {
           'flex h-16 items-center border-b border-sidebar-border px-4',
           collapsed ? 'justify-center' : 'gap-3'
         )}>
-          <Image 
-            src="/images/logo.jpg" 
-            alt="RoleMark" 
-            width={32} 
-            height={32} 
-            className="h-8 w-8 shrink-0"
-          />
-          {!collapsed && (
-            <span className="text-lg font-bold text-sidebar-foreground">RoleMark</span>
+          {collapsed ? (
+            <LogoMark size={32} />
+          ) : (
+            <Logo size={32} showText />
           )}
         </div>
 
