@@ -26,30 +26,34 @@ const steps = [
 
 export function LandingHowItWorks() {
   return (
-    <section id="how-it-works" className="py-16 lg:py-24 bg-card border-y border-border">
+    <section id="how-it-works" className="py-20 lg:py-28 border-t border-border">
       <div className="mx-auto max-w-6xl px-4 lg:px-6">
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl font-bold text-foreground lg:text-4xl text-balance">
+        <div className="text-center mb-16">
+          <p className="text-sm font-medium text-primary mb-3">HOW IT WORKS</p>
+          <h2 className="text-3xl font-semibold text-foreground lg:text-4xl text-balance">
             Three steps to your best resume
           </h2>
-          <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             From upload to offer-ready in minutes, not hours.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {steps.map((item) => (
-            <div key={item.step} className="flex flex-col items-center text-center gap-4">
-              <div className="relative">
-                <div className="flex h-16 w-16 items-center justify-center bg-primary/10 border border-primary/20">
-                  <item.icon className="h-7 w-7 text-primary" />
+        <div className="grid gap-12 md:grid-cols-3 md:gap-8">
+          {steps.map((item, index) => (
+            <div key={item.step} className="relative flex flex-col items-start gap-4">
+              {/* Connector line for desktop */}
+              {index < steps.length - 1 && (
+                <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-px bg-border" />
+              )}
+              
+              <div className="flex items-center gap-4">
+                <div className="flex h-16 w-16 items-center justify-center border-2 border-primary/30 bg-primary/5">
+                  <item.icon className="h-6 w-6 text-primary" />
                 </div>
-                <span className="absolute -top-2 -right-2 flex h-7 w-7 items-center justify-center bg-primary text-xs font-bold text-primary-foreground">
-                  {item.step}
-                </span>
+                <span className="text-5xl font-light text-border">{item.step}</span>
               </div>
               <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
-              <p className="text-muted-foreground leading-relaxed max-w-xs">{item.description}</p>
+              <p className="text-muted-foreground leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>
