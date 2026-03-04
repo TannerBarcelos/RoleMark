@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ThemeToggle } from '@/components/theme-toggle'
 
 type OAuthProvider = 'google' | 'github' | 'linkedin_oidc'
@@ -39,10 +40,14 @@ export default function LoginPage() {
       </div>
       <div className="w-full max-w-sm">
         <div className="flex flex-col gap-6">
-          <Link href="/" className="flex items-center justify-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center bg-primary">
-              <span className="text-sm font-bold text-primary-foreground">RM</span>
-            </div>
+          <Link href="/" className="flex items-center justify-center gap-2.5">
+            <Image 
+              src="/images/logo.jpg" 
+              alt="RoleMark" 
+              width={36} 
+              height={36} 
+              className="h-9 w-9"
+            />
             <span className="text-xl font-bold text-foreground">RoleMark</span>
           </Link>
 

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import {
@@ -75,9 +76,13 @@ export function DashboardSidebar() {
           'flex h-16 items-center border-b border-sidebar-border px-4',
           collapsed ? 'justify-center' : 'gap-3'
         )}>
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center bg-sidebar-primary">
-            <span className="text-xs font-bold text-sidebar-primary-foreground">RM</span>
-          </div>
+          <Image 
+            src="/images/logo.jpg" 
+            alt="RoleMark" 
+            width={32} 
+            height={32} 
+            className="h-8 w-8 shrink-0"
+          />
           {!collapsed && (
             <span className="text-lg font-bold text-sidebar-foreground">RoleMark</span>
           )}

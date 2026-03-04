@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function LandingFooter() {
   return (
@@ -6,9 +7,13 @@ export function LandingFooter() {
       <div className="mx-auto max-w-6xl px-4 lg:px-6">
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="flex h-8 w-8 items-center justify-center bg-primary">
-              <span className="text-[10px] font-bold text-primary-foreground tracking-tight">RM</span>
-            </div>
+            <Image 
+              src="/images/logo.jpg" 
+              alt="RoleMark" 
+              width={32} 
+              height={32} 
+              className="h-8 w-8"
+            />
             <span className="text-lg font-semibold text-foreground tracking-tight">RoleMark</span>
           </div>
 
