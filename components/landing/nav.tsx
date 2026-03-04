@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
+import { CornerButton } from '@/components/ui/corner-button'
 
 const navLinks = [
   { href: '#how-it-works', label: 'How It Works' },
@@ -38,14 +39,14 @@ export function LandingNav() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
-          <Button asChild variant="ghost" className="min-h-[44px]">
-            <Link href="/auth/login">Sign In</Link>
-          </Button>
-          <Button asChild className="min-h-[44px]">
-            <Link href="/auth/login">Get Started</Link>
-          </Button>
+          <Link href="/auth/login">
+            <CornerButton variant="ghost">Sign In</CornerButton>
+          </Link>
+          <Link href="/auth/login">
+            <CornerButton>Get Started</CornerButton>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -72,13 +73,14 @@ export function LandingNav() {
                 {link.label}
               </a>
             ))}
-            <div className="flex flex-col gap-2 pt-2 border-t border-border">
-              <Button asChild variant="outline" className="w-full min-h-[44px]">
-                <Link href="/auth/login">Sign In</Link>
-              </Button>
-              <Button asChild className="w-full min-h-[44px]">
-                <Link href="/auth/login">Get Started</Link>
-              </Button>
+            <div className="flex flex-col gap-3 pt-3 border-t border-border">
+              <ThemeToggle />
+              <Link href="/auth/login" className="w-full">
+                <CornerButton variant="ghost" className="w-full justify-center">Sign In</CornerButton>
+              </Link>
+              <Link href="/auth/login" className="w-full">
+                <CornerButton className="w-full justify-center">Get Started</CornerButton>
+              </Link>
             </div>
           </nav>
         </div>

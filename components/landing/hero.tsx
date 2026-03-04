@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
 import { ArrowRight, FileText, Target, Sparkles } from 'lucide-react'
+import { CornerButton } from '@/components/ui/corner-button'
 
 export function LandingHero() {
   return (
@@ -28,16 +28,18 @@ export function LandingHero() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-            <Button asChild size="lg" className="min-h-[52px] px-8 text-base">
-              <Link href="/auth/login">
+          <div className="flex flex-col gap-4 sm:flex-row sm:gap-5">
+            <Link href="/auth/login">
+              <CornerButton className="min-h-[52px] px-8 text-base gap-2">
                 Start Free
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="min-h-[52px] px-8 text-base">
-              <a href="#how-it-works">See How It Works</a>
-            </Button>
+                <ArrowRight className="h-4 w-4" />
+              </CornerButton>
+            </Link>
+            <a href="#how-it-works">
+              <CornerButton variant="ghost" className="min-h-[52px] px-8 text-base">
+                See How It Works
+              </CornerButton>
+            </a>
           </div>
 
           <p className="text-sm text-muted-foreground">

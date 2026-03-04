@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { useState } from 'react'
 import Link from 'next/link'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 type OAuthProvider = 'google' | 'github' | 'linkedin_oidc'
 
@@ -31,7 +32,11 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10 bg-background">
+    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10 bg-background relative">
+      {/* Theme toggle in top right */}
+      <div className="absolute top-4 right-4">
+        <ThemeToggle />
+      </div>
       <div className="w-full max-w-sm">
         <div className="flex flex-col gap-6">
           <Link href="/" className="flex items-center justify-center gap-2">

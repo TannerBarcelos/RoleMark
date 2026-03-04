@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Check, ArrowRight } from 'lucide-react'
+import { CornerButton } from '@/components/ui/corner-button'
 
 const plans = [
   {
@@ -118,16 +118,12 @@ export function LandingPricing() {
                     </li>
                   ))}
                 </ul>
-                <Button
-                  asChild
-                  variant={plan.variant}
-                  className="w-full min-h-[44px] mt-auto"
-                >
-                  <Link href="/auth/login">
+                <Link href="/auth/login" className="mt-auto">
+                  <CornerButton className="w-full min-h-[44px] justify-center gap-2">
                     {plan.cta}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+                    <ArrowRight className="h-4 w-4" />
+                  </CornerButton>
+                </Link>
               </CardContent>
             </Card>
           ))}
