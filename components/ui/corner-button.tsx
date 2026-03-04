@@ -22,7 +22,7 @@ export function CornerButton({
     <Comp
       className={cn(
         'group relative inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium transition-all min-h-[44px]',
-        variant === 'default' && 'bg-transparent text-primary border border-primary hover:bg-primary/5',
+        variant === 'default' && 'bg-transparent text-primary border border-primary hover:border-primary/80 hover:text-primary/80',
         variant === 'ghost' && 'bg-transparent text-foreground hover:text-primary',
         className
       )}
