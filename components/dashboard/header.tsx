@@ -62,7 +62,7 @@ export function DashboardHeader() {
       <div className="flex items-center gap-2">
         <ThemeToggle />
         {user?.subscriptionStatus === 'active' && (
-          <span className="hidden sm:inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+          <span className="hidden sm:inline-flex items-center bg-primary/10 border border-primary/30 px-2.5 py-0.5 text-xs font-medium text-primary">
             Pro
           </span>
         )}

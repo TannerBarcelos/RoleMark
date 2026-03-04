@@ -28,17 +28,21 @@ export function CornerButton({
       )}
       {...props}
     >
-      {/* Corner flares - only show on default variant */}
+      {/* Corner flares with cross marks - only show on default variant */}
       {variant === 'default' && (
         <>
-          {/* Top-left corner */}
-          <span className="absolute -top-px -left-px w-2.5 h-2.5 border-t-2 border-l-2 border-primary" />
-          {/* Top-right corner */}
-          <span className="absolute -top-px -right-px w-2.5 h-2.5 border-t-2 border-r-2 border-primary" />
-          {/* Bottom-left corner */}
-          <span className="absolute -bottom-px -left-px w-2.5 h-2.5 border-b-2 border-l-2 border-primary" />
-          {/* Bottom-right corner */}
-          <span className="absolute -bottom-px -right-px w-2.5 h-2.5 border-b-2 border-r-2 border-primary" />
+          {/* Top-left corner cross */}
+          <span className="absolute -top-1 left-0 w-px h-2 bg-primary" />
+          <span className="absolute top-0 -left-1 w-2 h-px bg-primary" />
+          {/* Top-right corner cross */}
+          <span className="absolute -top-1 right-0 w-px h-2 bg-primary" />
+          <span className="absolute top-0 -right-1 w-2 h-px bg-primary" />
+          {/* Bottom-left corner cross */}
+          <span className="absolute -bottom-1 left-0 w-px h-2 bg-primary" />
+          <span className="absolute bottom-0 -left-1 w-2 h-px bg-primary" />
+          {/* Bottom-right corner cross */}
+          <span className="absolute -bottom-1 right-0 w-px h-2 bg-primary" />
+          <span className="absolute bottom-0 -right-1 w-2 h-px bg-primary" />
         </>
       )}
       {children}
