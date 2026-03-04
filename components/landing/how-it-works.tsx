@@ -46,14 +46,16 @@ export function LandingHowItWorks() {
                 <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-px bg-border" />
               )}
               
-              <div className="flex items-center gap-4">
-                <div className="flex h-16 w-16 items-center justify-center border-2 border-primary/30 bg-primary/5">
-                  <item.icon className="h-6 w-6 text-primary" />
+              <div className="relative">
+                <div className="flex h-14 w-14 items-center justify-center border border-primary/30 bg-primary/5">
+                  <item.icon className="h-5 w-5 text-primary" />
                 </div>
-                <span className="text-5xl font-light text-border">{item.step}</span>
+                <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center bg-primary text-[10px] font-medium text-primary-foreground">
+                  {index + 1}
+                </span>
               </div>
-              <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+              <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>
