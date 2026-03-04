@@ -13,6 +13,7 @@ import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Settings, CreditCard, LogOut } from 'lucide-react'
+import { ThemeToggle } from '@/components/theme-toggle'
 import useSWR from 'swr'
 
 async function fetchUser() {
@@ -58,7 +59,8 @@ export function DashboardHeader() {
     <header className="flex h-16 items-center justify-between border-b border-border bg-card px-4 lg:px-6">
       <div className="ml-12 lg:ml-0" />
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2">
+        <ThemeToggle />
         {user?.subscriptionStatus === 'active' && (
           <span className="hidden sm:inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
             Pro

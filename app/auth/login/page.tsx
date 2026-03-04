@@ -35,8 +35,8 @@ export default function LoginPage() {
       <div className="w-full max-w-sm">
         <div className="flex flex-col gap-6">
           <Link href="/" className="flex items-center justify-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-              <span className="text-sm font-bold text-primary-foreground">R</span>
+            <div className="flex h-9 w-9 items-center justify-center bg-primary">
+              <span className="text-sm font-bold text-primary-foreground">RM</span>
             </div>
             <span className="text-xl font-bold text-foreground">RoleMark</span>
           </Link>

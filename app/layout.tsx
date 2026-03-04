@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from 'sonner'
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 const _geist = Geist({ subsets: ['latin'] })
@@ -45,7 +46,10 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
-  themeColor: '#4F46E5',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#10B981' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+  ],
 }
 
 export default function RootLayout({
@@ -54,10 +58,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
+    <html lang="en" className="bg-background" suppressHydrationWarning>
       <body className="font-sans antialiased">
-        {children}
-        <Toaster position="top-right" richColors />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster position="top-right" richColors />
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

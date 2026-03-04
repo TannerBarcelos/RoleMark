@@ -95,7 +95,7 @@ export function LandingPricing() {
               }
             >
               {plan.popular && (
-                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground">
+                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-none">
                   Most Popular
                 </Badge>
               )}

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 const navLinks = [
   { href: '#how-it-works', label: 'How It Works' },
@@ -18,8 +19,8 @@ export function LandingNav() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 lg:px-6">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-            <span className="text-xs font-bold text-primary-foreground">R</span>
+          <div className="flex h-8 w-8 items-center justify-center bg-primary">
+            <span className="text-xs font-bold text-primary-foreground">RM</span>
           </div>
           <span className="text-lg font-bold text-foreground">RoleMark</span>
         </Link>
@@ -37,7 +38,8 @@ export function LandingNav() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-2 md:flex">
+          <ThemeToggle />
           <Button asChild variant="ghost" className="min-h-[44px]">
             <Link href="/auth/login">Sign In</Link>
           </Button>
@@ -49,7 +51,7 @@ export function LandingNav() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex h-11 w-11 items-center justify-center rounded-lg md:hidden"
+          className="flex h-11 w-11 items-center justify-center md:hidden"
           aria-label="Toggle navigation"
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -65,7 +67,7 @@ export function LandingNav() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-foreground min-h-[44px] flex items-center"
+                className="px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-foreground min-h-[44px] flex items-center"
               >
                 {link.label}
               </a>

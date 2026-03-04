@@ -51,7 +51,7 @@ export function LandingFeatures() {
           {features.map((feature) => (
             <Card key={feature.title} className="border-border/60 hover:border-primary/30 transition-colors">
               <CardContent className="flex flex-col gap-3 p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                <div className="flex h-10 w-10 items-center justify-center bg-primary/10 border border-primary/20">
                   <feature.icon className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground">{feature.title}</h3>

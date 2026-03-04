@@ -48,7 +48,7 @@ export function DashboardSidebar() {
       {/* Mobile toggle */}
       <button
         onClick={() => setMobileOpen(true)}
-        className="fixed top-4 left-4 z-50 flex h-11 w-11 items-center justify-center rounded-lg bg-sidebar text-sidebar-foreground lg:hidden"
+        className="fixed top-4 left-4 z-50 flex h-11 w-11 items-center justify-center bg-sidebar text-sidebar-foreground border border-sidebar-border lg:hidden"
         aria-label="Open navigation"
       >
         <Menu className="h-5 w-5" />
@@ -75,8 +75,8 @@ export function DashboardSidebar() {
           'flex h-16 items-center border-b border-sidebar-border px-4',
           collapsed ? 'justify-center' : 'gap-3'
         )}>
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sidebar-primary">
-            <span className="text-xs font-bold text-sidebar-primary-foreground">R</span>
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center bg-sidebar-primary">
+            <span className="text-xs font-bold text-sidebar-primary-foreground">RM</span>
           </div>
           {!collapsed && (
             <span className="text-lg font-bold text-sidebar-foreground">RoleMark</span>
@@ -92,9 +92,9 @@ export function DashboardSidebar() {
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
                   className={cn(
-                    'flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors min-h-[44px]',
+                    'flex items-center gap-3 px-3 py-2.5 text-sm font-medium transition-colors min-h-[44px]',
                     isActive(item.href)
-                      ? 'bg-sidebar-accent text-sidebar-accent-foreground'
+                      ? 'bg-sidebar-accent text-sidebar-accent-foreground border-l-2 border-sidebar-primary'
                       : 'text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground'
                   )}
                 >
@@ -110,7 +110,7 @@ export function DashboardSidebar() {
         <div className="border-t border-sidebar-border p-3">
           <button
             onClick={handleSignOut}
-            className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground transition-colors min-h-[44px]"
+            className="flex w-full items-center gap-3 px-3 py-2.5 text-sm font-medium text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground transition-colors min-h-[44px]"
           >
             <LogOut className="h-5 w-5 shrink-0" />
             {!collapsed && <span>Sign Out</span>}
@@ -119,7 +119,7 @@ export function DashboardSidebar() {
           {/* Collapse toggle - desktop only */}
           <button
             onClick={() => setCollapsed(!collapsed)}
-            className="hidden lg:flex w-full items-center justify-center rounded-lg px-3 py-2 text-sidebar-foreground/50 hover:text-sidebar-foreground transition-colors mt-1 min-h-[44px]"
+            className="hidden lg:flex w-full items-center justify-center px-3 py-2 text-sidebar-foreground/50 hover:text-sidebar-foreground transition-colors mt-1 min-h-[44px]"
             aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
           >
             <ChevronLeft className={cn('h-4 w-4 transition-transform', collapsed && 'rotate-180')} />

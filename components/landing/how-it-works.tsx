@@ -41,10 +41,10 @@ export function LandingHowItWorks() {
           {steps.map((item) => (
             <div key={item.step} className="flex flex-col items-center text-center gap-4">
               <div className="relative">
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10">
+                <div className="flex h-16 w-16 items-center justify-center bg-primary/10 border border-primary/20">
                   <item.icon className="h-7 w-7 text-primary" />
                 </div>
-                <span className="absolute -top-2 -right-2 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                <span className="absolute -top-2 -right-2 flex h-7 w-7 items-center justify-center bg-primary text-xs font-bold text-primary-foreground">
                   {item.step}
                 </span>
               </div>
