@@ -1,4 +1,4 @@
-# AGENTS.md
+# CLAUDE.md
 
 ## Intro
 
@@ -48,4 +48,4 @@
 - Always run `pnpm lint` and `pnpm build` before committing
 - Ensure all environment variables are properly configured for local testing
 - Test authentication flow and payment integration if modified
-- Update AGENTS.md if adding new development workflows or tips
+- Update CLAUDE.md if adding new development workflows or tips
