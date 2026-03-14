@@ -4,6 +4,8 @@
 
 RoleMark is an AI-powered resume scoring and tailoring SaaS that helps job seekers optimize their resumes for specific roles, generate tailored versions, and create compelling cover letters.
 
+![RoleMark Dashboard](./app-img.png)
+
 ## Features
 
 - **AI Resume Scoring** - Upload your resume and job description to get an instant compatibility score with detailed feedback
